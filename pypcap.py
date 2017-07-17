@@ -30,8 +30,14 @@ while len(pkt) > 0:
 	print 'dest ip : ' + hex2ip(ipHeader.encode('hex')[24:32])
 	print 'src ip : ' + hex2ip(ipHeader.encode('hex')[32:40])
 	
-	print 'length : ' + str(int(ipHeader.encode('hex')[4:8], 16) + 14)
+	print 'dest port : ' + str(int(tcpHeader.encode('hex')[0:4], 16))
+	print 'src port : ' + str(int(tcpHeader.encode('hex')[4:8], 16))
 
+
+	length = int(ipHeader.encode('hex')[4:8], 16) + 14
+	print 'length : ' + str(length)
+	#print 'test' + 
+	#print 'data : ' + length
 	
 	#print "from:  "+hex2ip(ipdata[0])+":"+tcpdata[0]+"    to:  "+hex2ip(ipdata[1])+":"+tcpdata[1]
 	
