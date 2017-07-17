@@ -4,7 +4,6 @@ import struct
 import time
 
 s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW, socket.htons(0x800))
-print "Waiting.."
 packet = s.recv(2048)
 print "received"
 
@@ -16,7 +15,6 @@ def hex2ip(hex_ip):
 
 while len(packet) > 0:
 
-    print "Waiting.."
     packet = s.recv(2048)
     print "received"
 
